@@ -180,7 +180,7 @@ public class MainPersonalActivity extends AppCompatActivity implements View.OnCl
 
         transaction.setCustomAnimations(animation_in, animation_out);
 
-        view.setAlpha((float) 0.8);
+//        view.setAlpha((float) 0.8);
         view.setVisibility(View.VISIBLE);
 
         transaction.add(layout_id, fragment);
