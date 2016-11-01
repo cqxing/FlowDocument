@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">FlowDocument</string>
+    <string name="main_toolbar_tv">欢迎使用中国电信流量凭证客户端!</string>
+    <string name="main_container_tv_1">请选择您的用户类型:</string>
+    <string name="main_container_tv_2">(仅限中国电信4G用户使用)</string>
 </resources>
