@@ -25,4 +25,11 @@
     <string name="auto_login">自动登陆</string>
     <string name="other_login">其他登陆方式:</string>
     <string name="complete_personal_message">完善个人信息</string>
+    <string name="have_time">当前状态:已启用</string>
+    <string name="no_time">当前状态:停用</string>
+
+    <string name="how_long_time">可用时长</string>
+    <string name="bigger">大于</string>
+    <string name="day">天</string>
+    <string name="buy_the_time">点击订购时长</string>
 </resources>

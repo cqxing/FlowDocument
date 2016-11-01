@@ -5,6 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="toolbar_background">#A93535</color>
     <color name="white">#FFFFFF</color>
+    <color name="red">#FF0000</color>
     <color name="main_personal_center">#EDEDED</color>
     <color name="main_personal_center_tv">#333333</color>
     <color name="register_and_login_background">#454545</color>
