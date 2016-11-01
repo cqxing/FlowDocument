@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_personal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cndatacom.flowdocument.activity.MainPersonalActivity">
+
+    <include
+        android:id="@+id/Layout_main"
+        layout="@layout/layou_main"></include>
+
+    <FrameLayout
+        android:id="@+id/Layout_product_order_and_donation_time"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"></FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/Layout_query_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"></FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/Layout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"></FrameLayout>
+</RelativeLayout>

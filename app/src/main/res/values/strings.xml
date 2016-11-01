@@ -3,4 +3,25 @@
     <string name="main_toolbar_tv">欢迎使用中国电信流量凭证客户端!</string>
     <string name="main_container_tv_1">请选择您的用户类型:</string>
     <string name="main_container_tv_2">(仅限中国电信4G用户使用)</string>
+    <string name="register">注册</string>
+    <string name="login">登陆</string>
+    <string name="product_order">产品订购</string>
+    <string name="donation_time">时长转赠</string>
+    <string name="query_detail">明细查询</string>
+    <string name="personal_center">个人中心</string>
+    <string name="main_personal_tips">请登录,将有更多惊喜~</string>
+    <string name="logout">再按一次退出程序</string>
+
+    <!--register fragment-->
+    <string name="email_address">邮箱地址:</string>
+    <string name="nickname">昵&#160;&#8201;&#160;&#8201;称:</string>
+    <string name="password">密&#160;&#8201;&#160;&#8201;码:</string>
+    <string name="sure_password">确认密码:</string>
+    <string name="verification_code">验证码:</string>
+    <string name="get_verification_code">获取验证码</string>
+    <string name="register_tips">*请通过注册邮箱查看验证码邮件,2小时内有效</string>
+
+    <string name="register_success">注册成功!</string>
+    <string name="auto_login">自动登陆</string>
+    <string name="other_login">其他登陆方式:</string>
 </resources>
