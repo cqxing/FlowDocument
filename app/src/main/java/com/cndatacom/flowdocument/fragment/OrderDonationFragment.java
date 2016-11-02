@@ -17,7 +17,7 @@ import com.flyco.tablayout.SlidingTabLayout;
 
 import java.util.ArrayList;
 
-public class RegisterLoginFragment extends Fragment {
+public class OrderDonationFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -26,21 +26,21 @@ public class RegisterLoginFragment extends Fragment {
 
     private Context mContext = getContext();
     private ArrayList<Fragment> mFragments = new ArrayList<>();
-    private String[] mTitles = {"注册", "登陆"};
-    private RegisterLoginPagerAdapter mAdapter;
+    private String[] mTitles = {"产品订购", "时长转赠"};
+    private OrderDonationPagerAdapter mAdapter;
 
     private OnFragmentInteractionListener mListener;
 
-    public RegisterLoginFragment() {
+    public OrderDonationFragment() {
     }
 
-    public static RegisterLoginFragment newInstance() {
-        RegisterLoginFragment fragment = new RegisterLoginFragment();
+    public static OrderDonationFragment newInstance() {
+        OrderDonationFragment fragment = new OrderDonationFragment();
         return fragment;
     }
 
-    public static RegisterLoginFragment newInstance(String param1, String param2) {
-        RegisterLoginFragment fragment = new RegisterLoginFragment();
+    public static OrderDonationFragment newInstance(String param1, String param2) {
+        OrderDonationFragment fragment = new OrderDonationFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -60,21 +60,20 @@ public class RegisterLoginFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_register_login, null);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_order_donation, null);
         initView(view);
         return view;
     }
 
     private void initView(View view) {
-        mFragments.add(0, RegisterFragment.newInstance());
-        mFragments.add(1, LoginFragment.newInstance());
+        mFragments.add(0, OrderProductFragment.newInstance());
+        mFragments.add(1, DonationTimeFragment.newInstance());
         ViewPager vp = ViewFindUtils.find(view, R.id.viewpager);
-        mAdapter = new RegisterLoginPagerAdapter(this.getFragmentManager());
+        mAdapter = new OrderDonationPagerAdapter(this.getFragmentManager());
         vp.setAdapter(mAdapter);
-        SlidingTabLayout tabLayout_9 = ViewFindUtils.find(view, R.id.tl_9_register_login);
+        SlidingTabLayout tabLayout_9 = ViewFindUtils.find(view, R.id.tl_9_order_donation);
 
         tabLayout_9.setViewPager(vp);
-        tabLayout_9.setCurrentTab(1);
     }
 
     @Override
@@ -95,8 +94,8 @@ public class RegisterLoginFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
-    private class RegisterLoginPagerAdapter extends FragmentPagerAdapter {
-        public RegisterLoginPagerAdapter(FragmentManager fm) {
+    private class OrderDonationPagerAdapter extends FragmentPagerAdapter {
+        public OrderDonationPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
@@ -115,5 +114,4 @@ public class RegisterLoginFragment extends Fragment {
             return mFragments.get(position);
         }
     }
-
 }

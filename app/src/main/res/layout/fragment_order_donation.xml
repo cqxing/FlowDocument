@@ -3,17 +3,16 @@
     xmlns:tl="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/register_and_login_background"
+    android:background="@color/black"
     android:clickable="true"
     android:orientation="vertical">
 
     <com.flyco.tablayout.SlidingTabLayout
-        android:id="@+id/tl_9_register_login"
+        android:id="@+id/tl_9_order_donation"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="35dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         tl:tl_indicator_margin_left="2dp"
@@ -21,7 +20,7 @@
         tl:tl_indicator_style="BLOCK"
         tl:tl_textsize="@dimen/tv_size_bigger" />
 
-    <com.cndatacom.flowdocument.view.WrapContentHeightViewPager
+    <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

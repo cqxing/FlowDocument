@@ -32,4 +32,19 @@
     <string name="bigger">大于</string>
     <string name="day">天</string>
     <string name="buy_the_time">点击订购时长</string>
+
+    <string name="order_product_tips">请点击上方选择产品</string>
+    <string name="order_product_rules">订购业务规则</string>
+
+    <!--donation time-->
+    <string name="donation_now_time">当前可转赠时长:</string>
+    <string name="donation_minute">143分钟</string>
+    <string name="donation_object">转赠对象</string>
+    <string name="donation_email">请填写转赠对象电子邮箱</string>
+    <string name="donation_how_time">转赠时长</string>
+    <string name="donation_input_time">请输入转赠时长</string>
+    <string name="minute">分钟</string>
+    <string name="donation_v_code">验证码</string>
+
+
 </resources>

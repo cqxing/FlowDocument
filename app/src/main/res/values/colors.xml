@@ -12,4 +12,11 @@
 
     <color name="register_and_login_top">#666666</color>
     <color name="register_and_login_tips_tv">#f2edcc</color>
+    <color name="main_bg">#5E5E5E</color>
+    <color name="black">#000000</color>
+    <color name="black_">#CC000000</color>
+
+    <color name="order_color_yellow">#ffcc33</color>
+    <color name="order_color_text">#999999</color>
+
 </resources>

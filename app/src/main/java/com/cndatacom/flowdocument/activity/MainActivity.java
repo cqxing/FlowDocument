@@ -10,8 +10,8 @@ import com.cndatacom.flowdocument.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ImageButton btn_personal_user;
-    private ImageButton btn_enterprise_user;
+    private ImageButton btn_personal_user;//personal user
+    private ImageButton btn_enterprise_user;//enterprise user
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent();
         switch (view.getId()) {
             case R.id.btn_personal_user:
+                //go to the MainPersonalActivity
                 intent.setClass(MainActivity.this, MainPersonalActivity.class);
                 startActivity(intent);
                 break;

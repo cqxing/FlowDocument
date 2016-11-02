@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/register_and_login_background"
@@ -60,17 +59,57 @@
 
     </LinearLayout>
 
-    <CheckBox
-        style="@style/CustomCheckBoxStyle"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="5dp"
-        android:text="@string/auto_login"
-        android:textColor="@color/white"
-        android:textSize="@dimen/tv_size_normal" />
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp">
+
+        <CheckBox
+            style="@style/CustomCheckBoxStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="5dp"
+            android:text="@string/auto_login"
+            android:textColor="@color/white"
+            android:textSize="@dimen/tv_size_normal" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/other_login"
+                android:textColor="@color/white"
+                android:textSize="@dimen/tv_size_normal" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ico_ty" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ico_weixin" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 
     <ImageView
         android:layout_width="wrap_content"
@@ -82,39 +121,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginBottom="35dp"
         android:layout_marginTop="10dp"
         android:src="@drawable/btn_back_selector" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginBottom="35dp"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="50dp"
-            android:text="@string/other_login"
-            android:textColor="@color/white"
-            android:textSize="@dimen/tv_size_normal" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/ico_ty" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/ico_weixin" />
-
-    </LinearLayout>
 </LinearLayout>

@@ -1,5 +1,6 @@
 package com.cndatacom.flowdocument.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,11 +16,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cndatacom.flowdocument.R;
+import com.cndatacom.flowdocument.fragment.OrderDonationFragment;
 import com.cndatacom.flowdocument.fragment.RegisterLoginFragment;
 
 public class MainPersonalActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private View product_order_and_donation_time_View;
+    private View product_order_and_donation_time_View;//the FrameLayout
     private View query_detail_View;
     private View bottom_View;
     private View main_View;
@@ -27,14 +29,15 @@ public class MainPersonalActivity extends AppCompatActivity implements View.OnCl
     private static final String BOTTOM = "bottom";
     private static final String PRODUCT_DONATION = "product_order_and_donation_time";
     private static final String QUERY_DETAIL = "query_detail";
-    private boolean bottom_isShowing = false;
+    private boolean bottom_isShowing = false;//bottom_view is show or not
     private boolean product_order_and_donation_time_isShowing = false;
     private boolean query_detail_isShowing = false;
 
     private RegisterLoginFragment registerLoginFragment;
+    private OrderDonationFragment orderDonationFragment;
 
-    private TextView login;
-    private TextView register;
+    private TextView login;//login
+    private TextView register;//register
 
     private LinearLayout product_order;
     private LinearLayout donation_time;
@@ -42,6 +45,7 @@ public class MainPersonalActivity extends AppCompatActivity implements View.OnCl
     private LinearLayout personal_center;
 
     private long mExitTime;
+    private View background_view;
 
 
     @Override
@@ -77,6 +81,14 @@ public class MainPersonalActivity extends AppCompatActivity implements View.OnCl
         if (registerLoginFragment == null) {
             registerLoginFragment = RegisterLoginFragment.newInstance();
         }
+        if (orderDonationFragment == null) {
+            orderDonationFragment = OrderDonationFragment.newInstance();
+        }
+
+        if (background_view == null) {
+            background_view = new View(this);
+            background_view.setBackgroundColor(getResources().getColor(R.color.main_bg));
+        }
 
     }
 
@@ -91,6 +103,8 @@ public class MainPersonalActivity extends AppCompatActivity implements View.OnCl
                 break;
             case R.id.product_order:
                 Toast.makeText(this, getResources().getString(R.string.product_order), Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, OrderDonationActivity.class));
+                overridePendingTransition(R.anim.left, R.anim.left_hide);
                 break;
             case R.id.donation_time:
                 Toast.makeText(this, getResources().getString(R.string.donation_time), Toast.LENGTH_SHORT).show();
@@ -99,25 +113,20 @@ public class MainPersonalActivity extends AppCompatActivity implements View.OnCl
                 Toast.makeText(this, getResources().getString(R.string.query_detail), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.personal_center:
-                Toast.makeText(this, getResources().getString(R.string.personal_center), Toast.LENGTH_SHORT).show();
-
                 if (!registerLoginFragment.isAdded()) {
-//                    main_View.setAlpha((float) 0.7);
                     addFragment(bottom_View, registerLoginFragment, BOTTOM);
                 } else if (bottom_isShowing) {
-//                    main_View.setAlpha((float) 1);
-                    hideFragment(bottom_View, registerLoginFragment, BOTTOM);
+                    removeFragment(bottom_View, registerLoginFragment, BOTTOM);
                 } else {
-//                    main_View.setAlpha((float) 0.7);
                     showFragment(bottom_View, BOTTOM);
                 }
-
                 break;
         }
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
+        //click the other view to hide the bottomView
         if (bottom_isShowing && isNotClickBottom(ev)) {
             hideFragment(bottom_View, registerLoginFragment, BOTTOM);
             return true;
@@ -303,6 +312,7 @@ public class MainPersonalActivity extends AppCompatActivity implements View.OnCl
                 return true;
             }
             if (product_order_and_donation_time_isShowing) {
+                hideFragment(product_order_and_donation_time_View, orderDonationFragment, PRODUCT_DONATION);
                 return true;
             }
             if (bottom_isShowing) {
