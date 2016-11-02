@@ -18,11 +18,15 @@ import com.flyco.tablayout.SlidingTabLayout;
 import java.util.ArrayList;
 
 public class RegisterLoginFragment extends Fragment {
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+//    private static final String ARG_PARAM1 = "param1";
+//    private static final String ARG_PARAM2 = "param2";
 
-    private String mParam1;
-    private String mParam2;
+    private static final String WHICH_SELECT = "which_select";
+
+//    private String mParam1;
+//    private String mParam2;
+
+    private int which_select = -1;
 
     private Context mContext = getContext();
     private ArrayList<Fragment> mFragments = new ArrayList<>();
@@ -39,21 +43,28 @@ public class RegisterLoginFragment extends Fragment {
         return fragment;
     }
 
-    public static RegisterLoginFragment newInstance(String param1, String param2) {
+    public static RegisterLoginFragment newInstance(int which_select) {
         RegisterLoginFragment fragment = new RegisterLoginFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putInt(WHICH_SELECT, which_select);
         fragment.setArguments(args);
         return fragment;
     }
+
+//    public static RegisterLoginFragment newInstance(String param1, String param2) {
+//        RegisterLoginFragment fragment = new RegisterLoginFragment();
+//        Bundle args = new Bundle();
+//        args.putString(ARG_PARAM1, param1);
+//        args.putString(ARG_PARAM2, param2);
+//        fragment.setArguments(args);
+//        return fragment;
+//    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            which_select = getArguments().getInt(WHICH_SELECT);
         }
     }
 
@@ -69,12 +80,14 @@ public class RegisterLoginFragment extends Fragment {
         mFragments.add(0, RegisterFragment.newInstance());
         mFragments.add(1, LoginFragment.newInstance());
         ViewPager vp = ViewFindUtils.find(view, R.id.viewpager);
-        mAdapter = new RegisterLoginPagerAdapter(this.getFragmentManager());
+        mAdapter = new RegisterLoginPagerAdapter(this.getChildFragmentManager());
         vp.setAdapter(mAdapter);
         SlidingTabLayout tabLayout_9 = ViewFindUtils.find(view, R.id.tl_9_register_login);
 
         tabLayout_9.setViewPager(vp);
-        tabLayout_9.setCurrentTab(1);
+        if (which_select != -1) {
+            tabLayout_9.setCurrentTab(which_select);
+        }
     }
 
     @Override
@@ -90,6 +103,7 @@ public class RegisterLoginFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
+
 
     public interface OnFragmentInteractionListener {
         void onFragmentInteraction(Uri uri);

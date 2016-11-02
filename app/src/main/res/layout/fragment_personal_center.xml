@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/register_and_login_background"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/layou_personal_center"
+        layout="@layout/layou_personal_center"></include>
+
+    <include
+        android:id="@+id/layou_change_password"
+        layout="@layout/layou_change_password"
+        android:visibility="gone"></include>
+
+</LinearLayout>

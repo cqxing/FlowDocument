@@ -11,19 +11,14 @@
         layout="@layout/layou_main"></include>
 
     <FrameLayout
-        android:id="@+id/Layout_product_order_and_donation_time"
+        android:id="@+id/Layout_bottom_register_login"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:visibility="gone"></FrameLayout>
 
     <FrameLayout
-        android:id="@+id/Layout_query_detail"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"></FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/Layout_bottom"
+        android:id="@+id/Layout_bottom_personal_center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

@@ -24,6 +24,9 @@
         <activity
             android:name=".activity.OrderDonationActivity"
             android:theme="@style/Theme.Translucent"></activity>
+        <activity
+            android:name=".activity.QueryDetailActivity"
+            android:theme="@style/Theme.Translucent"></activity>
     </application>
 
 </manifest>
