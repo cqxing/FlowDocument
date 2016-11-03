@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.cndatacom.flowdocument.R;
-import com.cndatacom.flowdocument.utils.ViewFindUtils;
 import com.flyco.tablayout.SlidingTabLayout;
 
 import java.util.ArrayList;
