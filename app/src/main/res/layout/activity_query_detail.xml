@@ -5,16 +5,16 @@
     android:layout_height="wrap_content"
     android:clickable="true"
     android:orientation="vertical">
-    <!--产品订购 时常转赠界面 包含两个fragment-->
+    <!--明细查询界面-->
     <com.flyco.tablayout.SlidingTabLayout
         android:id="@+id/tl_9_order_donation_activity"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_gravity="center"
         android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="35dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
         tl:tl_indicator_margin_left="2dp"
         tl:tl_indicator_margin_right="2dp"
         tl:tl_indicator_style="BLOCK"

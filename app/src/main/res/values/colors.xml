@@ -20,4 +20,8 @@
     <color name="order_color_yellow">#ffcc33</color>
     <color name="order_color_text">#999999</color>
 
+    <color name="item_bg">#e0e4e7</color>
+
+    <color name="list_item_bg">#48FFFFFF</color>
+
 </resources>

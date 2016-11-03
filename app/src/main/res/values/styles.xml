@@ -10,10 +10,12 @@
         <item name="android:windowIsTranslucent">true</item>
     </style>
 
+    <!--自定义checkbox-->
     <style name="CustomCheckBoxStyle" parent="@android:style/Widget.CompoundButton.CheckBox">
         <item name="android:button">@drawable/checkbox_selector</item>
     </style>
 
+    <!--半透明的activity-->
     <style name="Theme.Translucent" parent="android:style/Theme.Translucent">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">@color/black_</item>

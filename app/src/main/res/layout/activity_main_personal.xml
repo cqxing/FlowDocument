@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.cndatacom.flowdocument.activity.MainPersonalActivity">
-
+    <!--个人主页-->
     <include
         android:id="@+id/Layout_main"
         layout="@layout/layou_main"></include>

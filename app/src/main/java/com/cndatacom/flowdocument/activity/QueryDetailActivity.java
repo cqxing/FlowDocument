@@ -31,7 +31,7 @@ public class QueryDetailActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        View view = LayoutInflater.from(this).inflate(R.layout.activity_order_donation, null);
+        View view = LayoutInflater.from(this).inflate(R.layout.activity_query_detail, null);
         setContentView(view);
         initView();
     }

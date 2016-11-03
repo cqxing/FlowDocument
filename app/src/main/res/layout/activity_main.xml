@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/main_bg"
     tools:context="com.cndatacom.flowdocument.activity.MainActivity">
-
+    <!--选择个人还是企业的页面-->
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
