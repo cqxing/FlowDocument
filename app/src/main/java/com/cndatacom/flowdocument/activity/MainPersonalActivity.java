@@ -16,8 +16,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cndatacom.flowdocument.R;
+import com.cndatacom.flowdocument.bean.VerificationCode;
+import com.cndatacom.flowdocument.constant.ServerConstants;
 import com.cndatacom.flowdocument.fragment.PersonalCenterFragment;
 import com.cndatacom.flowdocument.fragment.RegisterLoginFragment;
+import com.cndatacom.flowdocument.utils.DateUtils;
+import com.google.gson.Gson;
+
+import org.xutils.common.Callback;
+import org.xutils.common.util.LogUtil;
+import org.xutils.common.util.MD5;
+import org.xutils.http.RequestParams;
+import org.xutils.x;
+
+import java.util.Date;
 
 public class MainPersonalActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -50,6 +62,39 @@ public class MainPersonalActivity extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_personal);
         initView();
+//        TestServer();
+    }
+
+    private void TestServer() {
+        RequestParams requestParams = new RequestParams(ServerConstants.getVerificationCode);
+        requestParams.addBodyParameter("email", "15088132565@163.com");
+        requestParams.addBodyParameter("type", "1");
+        String timestamp = DateUtils.nowTime(new Date());
+        requestParams.addBodyParameter("timestamp", timestamp);
+        requestParams.addBodyParameter("key", MD5.md5("cndatacom2016" + timestamp));
+        x.http().post(requestParams, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                Gson gson = new Gson();
+                VerificationCode verificationCode = gson.fromJson(result, VerificationCode.class);
+                LogUtil.e(verificationCode.toString());
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+                LogUtil.e(ex.toString());
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
     }
 
     private void initView() {

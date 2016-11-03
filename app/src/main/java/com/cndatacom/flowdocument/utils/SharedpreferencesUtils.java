@@ -14,7 +14,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Base64;
 
-public class Utils_sp {
+public class SharedpreferencesUtils {
     /**
      * 保存在手机里面的文件名
      */
