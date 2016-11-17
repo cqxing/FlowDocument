@@ -11,17 +11,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.cndatacom.flowdocument.R;
-import com.cndatacom.flowdocument.fragment.personal.DonationDetailFragment;
-import com.cndatacom.flowdocument.fragment.personal.OrderDetailFragment;
-import com.cndatacom.flowdocument.fragment.personal.UseDetailFragment;
+import com.cndatacom.flowdocument.fragment.personal.DonationTimeFragment;
+import com.cndatacom.flowdocument.fragment.personal.OrderProductFragment;
 import com.flyco.tablayout.SlidingTabLayout;
 
 import java.util.ArrayList;
 
-public class QueryDetailActivity extends FragmentActivity {
+public class PersonalOrderDonationActivity extends FragmentActivity {
 
     private ArrayList<Fragment> mFragments = new ArrayList<>();
-    private String[] mTitles = {"订购明细", "启用明细", "转赠明细"};
+    private String[] mTitles = {"产品订购", "时长转赠"};
     private OrderDonationPagerAdapter mAdapter;
     private int which_select = -1;
     private final String WHICH_SELECT = "which_select";
@@ -29,7 +28,7 @@ public class QueryDetailActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        View view = LayoutInflater.from(this).inflate(R.layout.activity_personal_query_detail, null);
+        View view = LayoutInflater.from(this).inflate(R.layout.activity_personal_order_donation, null);
         setContentView(view);
         initView();
     }
@@ -37,10 +36,8 @@ public class QueryDetailActivity extends FragmentActivity {
     private void initView() {
         which_select = getIntent().getIntExtra(WHICH_SELECT, -1);
 
-        mFragments.add(0, OrderDetailFragment.newInstance());
-        mFragments.add(1, UseDetailFragment.newInstance());
-        mFragments.add(2, DonationDetailFragment.newInstance());
-
+        mFragments.add(0, OrderProductFragment.newInstance());
+        mFragments.add(1, DonationTimeFragment.newInstance());
         ViewPager vp = (ViewPager) findViewById(R.id.viewpager);
         mAdapter = new OrderDonationPagerAdapter(getSupportFragmentManager());
         vp.setAdapter(mAdapter);
@@ -76,7 +73,7 @@ public class QueryDetailActivity extends FragmentActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             finish();
-            overridePendingTransition(R.anim.right, R.anim.right_hide);
+            overridePendingTransition(R.anim.left, R.anim.left_hide);
             return true;
         }
         return super.onKeyDown(keyCode, event);

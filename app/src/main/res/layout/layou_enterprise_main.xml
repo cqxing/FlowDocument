@@ -16,7 +16,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/back_personal"
+                android:id="@+id/back_enterprise"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/back_selector" />
@@ -59,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1.5"
-            android:background="@drawable/top_banner"
+            android:background="@drawable/enterprise_top_banner_qy"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -178,14 +178,14 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/icon_product_order" />
+                    android:src="@drawable/enterprise_icon1_qy" />
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="@string/product_order" />
+                    android:text="@string/enterprise_product_order" />
 
             </LinearLayout>
 
@@ -201,14 +201,14 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/icon_donation_time" />
+                    android:src="@drawable/enterprise_icon2_qy" />
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="@string/donation_time" />
+                    android:text="@string/enterprise_access_app" />
 
             </LinearLayout>
 
@@ -224,14 +224,14 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/icon_query_detail" />
+                    android:src="@drawable/enterprise_icon3_qy" />
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="@string/query_detail" />
+                    android:text="@string/enterprise_query_detail" />
 
             </LinearLayout>
 
@@ -247,14 +247,14 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/icon_personal_center" />
+                    android:src="@drawable/enterprise_icon4_qy" />
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="@string/personal_center" />
+                    android:text="@string/enterprise_center" />
 
             </LinearLayout>
 

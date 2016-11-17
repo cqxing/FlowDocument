@@ -1,4 +1,4 @@
-package com.cndatacom.flowdocument.activity.personal;
+package com.cndatacom.flowdocument.activity.enterprise;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,7 +17,7 @@ import com.flyco.tablayout.SlidingTabLayout;
 
 import java.util.ArrayList;
 
-public class OrderDonationActivity extends FragmentActivity {
+public class EnterpriseOrderAccessActivity extends FragmentActivity {
 
     private ArrayList<Fragment> mFragments = new ArrayList<>();
     private String[] mTitles = {"产品订购", "时长转赠"};

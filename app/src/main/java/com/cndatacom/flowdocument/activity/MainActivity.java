@@ -5,12 +5,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.cndatacom.flowdocument.R;
-import com.cndatacom.flowdocument.activity.personal.MainPersonalActivity;
+import com.cndatacom.flowdocument.activity.enterprise.EnterpriseMainActivity;
+import com.cndatacom.flowdocument.activity.personal.PersonalMainActivity;
 import com.cndatacom.flowdocument.service.HeartBeatService;
 import com.cndatacom.flowdocument.utils.Network;
 import com.cndatacom.flowdocument.utils.Network.NetWorkType;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageButton btn_personal_user;//personal user
     private ImageButton btn_enterprise_user;//enterprise user
     private String ip = "";
+    private long mExitTime;
 
     private Handler handler = new Handler() {
         @Override
@@ -36,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initView();
 //        getMessage();
 //        initService();
-        initWifi();
+//        initWifi();
     }
 
     private void initWifi() {
@@ -89,12 +92,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent();
         switch (view.getId()) {
             case R.id.btn_personal_user:
-                //go to the MainPersonalActivity
-                intent.setClass(MainActivity.this, MainPersonalActivity.class);
+                //go to the EnterpriseMainActivity
+                intent.setClass(MainActivity.this, PersonalMainActivity.class);
                 startActivity(intent);
                 break;
             case R.id.btn_enterprise_user:
+                intent.setClass(MainActivity.this, EnterpriseMainActivity.class);
+                startActivity(intent);
                 break;
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if ((System.currentTimeMillis() - mExitTime) > 2000) {
+                Toast.makeText(this, getResources().getString(R.string.logout), Toast.LENGTH_SHORT).show();
+                mExitTime = System.currentTimeMillis();
+                return true;
+            } else {
+                finish();
+            }
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

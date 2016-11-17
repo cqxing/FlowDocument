@@ -1,4 +1,4 @@
-package com.cndatacom.flowdocument.activity.personal;
+package com.cndatacom.flowdocument.activity.enterprise;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,27 +11,15 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.cndatacom.flowdocument.R;
-import com.cndatacom.flowdocument.bean.VerificationCode;
-import com.cndatacom.flowdocument.constant.ServerConstants;
-import com.cndatacom.flowdocument.fragment.personal.PersonalCenterFragment;
-import com.cndatacom.flowdocument.fragment.personal.RegisterLoginFragment;
-import com.cndatacom.flowdocument.utils.DateUtils;
-import com.google.gson.Gson;
+import com.cndatacom.flowdocument.fragment.enterprise.EnterpriseCenterFragment;
+import com.cndatacom.flowdocument.fragment.enterprise.EnterpriseRegisterLoginFragment;
 
-import org.xutils.common.Callback;
-import org.xutils.common.util.LogUtil;
-import org.xutils.common.util.MD5;
-import org.xutils.http.RequestParams;
-import org.xutils.x;
-
-import java.util.Date;
-
-public class MainPersonalActivity extends AppCompatActivity implements View.OnClickListener {
+public class EnterpriseMainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private View bottom_View_register_login;
     private View bottom_View_personal_center;
@@ -42,8 +30,8 @@ public class MainPersonalActivity extends AppCompatActivity implements View.OnCl
     private boolean bottom_register_login_isShowing = false;//bottom_view is show or not
     private boolean bottom_personal_center_isShowing = false;//bottom_view is show or not
 
-    private RegisterLoginFragment registerLoginFragment;
-    private PersonalCenterFragment personalCenterFragment;
+    private EnterpriseRegisterLoginFragment registerLoginFragment;
+    private EnterpriseCenterFragment personalCenterFragment;
 
     private TextView login;//login
     private TextView register;//register
@@ -52,6 +40,7 @@ public class MainPersonalActivity extends AppCompatActivity implements View.OnCl
     private LinearLayout donation_time;
     private LinearLayout query_detail;
     private LinearLayout personal_center;
+    private ImageView back_enterprise;
 
     private long mExitTime;
 
@@ -60,41 +49,8 @@ public class MainPersonalActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_personal_main);
+        setContentView(R.layout.activity_enterprise_main);
         initView();
-//        TestServer();
-    }
-
-    private void TestServer() {
-        RequestParams requestParams = new RequestParams(ServerConstants.getVerificationCode);
-        requestParams.addBodyParameter("email", "15088132565@163.com");
-        requestParams.addBodyParameter("type", "1");
-        String timestamp = DateUtils.nowTime(new Date());
-        requestParams.addBodyParameter("timestamp", timestamp);
-        requestParams.addBodyParameter("key", MD5.md5("cndatacom2016" + timestamp));
-        x.http().post(requestParams, new Callback.CommonCallback<String>() {
-            @Override
-            public void onSuccess(String result) {
-                Gson gson = new Gson();
-                VerificationCode verificationCode = gson.fromJson(result, VerificationCode.class);
-                LogUtil.e(verificationCode.toString());
-            }
-
-            @Override
-            public void onError(Throwable ex, boolean isOnCallback) {
-                LogUtil.e(ex.toString());
-            }
-
-            @Override
-            public void onCancelled(CancelledException cex) {
-
-            }
-
-            @Override
-            public void onFinished() {
-
-            }
-        });
     }
 
     private void initView() {
@@ -118,39 +74,44 @@ public class MainPersonalActivity extends AppCompatActivity implements View.OnCl
         query_detail.setOnClickListener(this);
         personal_center.setOnClickListener(this);
 
+        back_enterprise = (ImageView) findViewById(R.id.back_enterprise);
+        back_enterprise.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.login:
-                registerLoginFragment = RegisterLoginFragment.newInstance(1);
+                registerLoginFragment = EnterpriseRegisterLoginFragment.newInstance(1);
                 addFragment(bottom_View_register_login, registerLoginFragment, BOTTOM_REGISTER_LOGIN);
                 break;
             case R.id.register:
-                registerLoginFragment = RegisterLoginFragment.newInstance(0);
+                registerLoginFragment = EnterpriseRegisterLoginFragment.newInstance(0);
                 addFragment(bottom_View_register_login, registerLoginFragment, BOTTOM_REGISTER_LOGIN);
                 break;
             case R.id.product_order:
-                Intent intent_po = new Intent(this, OrderDonationActivity.class);
+                Intent intent_po = new Intent(this, EnterpriseOrderAccessActivity.class);
                 intent_po.putExtra(WHICH_SELECT, 0);
                 startActivity(intent_po);
                 overridePendingTransition(R.anim.left, R.anim.left_hide);
                 break;
             case R.id.donation_time:
-                Intent intent_dt = new Intent(this, OrderDonationActivity.class);
+                Intent intent_dt = new Intent(this, EnterpriseOrderAccessActivity.class);
                 intent_dt.putExtra(WHICH_SELECT, 1);
                 startActivity(intent_dt);
                 overridePendingTransition(R.anim.left, R.anim.left_hide);
                 break;
             case R.id.query_detail:
-                Intent intent_qd = new Intent(this, QueryDetailActivity.class);
+                Intent intent_qd = new Intent(this, EnterpriseQueryDetailActivity.class);
                 startActivity(intent_qd);
                 overridePendingTransition(R.anim.right, R.anim.right_hide);
                 break;
             case R.id.personal_center:
-                personalCenterFragment = PersonalCenterFragment.newInstance();
+                personalCenterFragment = EnterpriseCenterFragment.newInstance();
                 addFragment(bottom_View_personal_center, personalCenterFragment, BOTTOM_PERSONAL_CENTERSTRING);
+                break;
+            case R.id.back_enterprise:
+                finish();
                 break;
         }
     }
@@ -274,13 +235,13 @@ public class MainPersonalActivity extends AppCompatActivity implements View.OnCl
                 return true;
             }
 
-            if ((System.currentTimeMillis() - mExitTime) > 2000) {
-                Toast.makeText(this, getResources().getString(R.string.logout), Toast.LENGTH_SHORT).show();
-                mExitTime = System.currentTimeMillis();
-                return true;
-            } else {
-                finish();
-            }
+//            if ((System.currentTimeMillis() - mExitTime) > 2000) {
+//                Toast.makeText(this, getResources().getString(R.string.logout), Toast.LENGTH_SHORT).show();
+//                mExitTime = System.currentTimeMillis();
+//                return true;
+//            } else {
+//                finish();
+//            }
 
         }
         return super.onKeyDown(keyCode, event);
