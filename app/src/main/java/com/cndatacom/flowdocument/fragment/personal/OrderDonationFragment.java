@@ -1,4 +1,4 @@
-package com.cndatacom.flowdocument.fragment;
+package com.cndatacom.flowdocument.fragment.personal;
 
 import android.content.Context;
 import android.net.Uri;
@@ -60,7 +60,7 @@ public class OrderDonationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_order_donation, null);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_personal_order_donation, null);
         initView(view);
         return view;
     }

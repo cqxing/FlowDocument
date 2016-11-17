@@ -1,4 +1,4 @@
-package com.cndatacom.flowdocument.fragment;
+package com.cndatacom.flowdocument.fragment.personal;
 
 import android.content.Context;
 import android.net.Uri;
@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.cndatacom.flowdocument.R;
 
-public class PersonalMessageFragment extends Fragment {
+public class PersonalCenterFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -19,16 +19,16 @@ public class PersonalMessageFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public PersonalMessageFragment() {
+    public PersonalCenterFragment() {
     }
 
-    public static PersonalMessageFragment newInstance() {
-        PersonalMessageFragment fragment = new PersonalMessageFragment();
+    public static PersonalCenterFragment newInstance() {
+        PersonalCenterFragment fragment = new PersonalCenterFragment();
         return fragment;
     }
 
-    public static PersonalMessageFragment newInstance(String param1, String param2) {
-        PersonalMessageFragment fragment = new PersonalMessageFragment();
+    public static PersonalCenterFragment newInstance(String param1, String param2) {
+        PersonalCenterFragment fragment = new PersonalCenterFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -48,18 +48,12 @@ public class PersonalMessageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_personal_message, null);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_personal_personal_center, null);
         initView(view);
         return view;
     }
 
     private void initView(View view) {
-    }
-
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
     }
 
     @Override

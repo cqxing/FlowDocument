@@ -12,7 +12,7 @@
 
     <include
         android:id="@+id/layou_change_password"
-        layout="@layout/layou_change_password"
+        layout="@layout/layou_personal_change_password"
         android:visibility="gone"></include>
 
 </LinearLayout>

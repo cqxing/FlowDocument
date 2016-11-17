@@ -1,4 +1,4 @@
-package com.cndatacom.flowdocument.activity;
+package com.cndatacom.flowdocument.activity.personal;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,8 +18,8 @@ import android.widget.Toast;
 import com.cndatacom.flowdocument.R;
 import com.cndatacom.flowdocument.bean.VerificationCode;
 import com.cndatacom.flowdocument.constant.ServerConstants;
-import com.cndatacom.flowdocument.fragment.PersonalCenterFragment;
-import com.cndatacom.flowdocument.fragment.RegisterLoginFragment;
+import com.cndatacom.flowdocument.fragment.personal.PersonalCenterFragment;
+import com.cndatacom.flowdocument.fragment.personal.RegisterLoginFragment;
 import com.cndatacom.flowdocument.utils.DateUtils;
 import com.google.gson.Gson;
 
@@ -60,7 +60,7 @@ public class MainPersonalActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_personal);
+        setContentView(R.layout.activity_personal_main);
         initView();
 //        TestServer();
     }

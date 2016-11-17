@@ -4,6 +4,6 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <include layout="@layout/list_item_use_detail"></include>
+    <include layout="@layout/list_item_personal_use_detail"></include>
 
 </LinearLayout>

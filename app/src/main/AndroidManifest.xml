@@ -24,14 +24,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.MainPersonalActivity"
+            android:name=".activity.personal.MainPersonalActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".activity.OrderDonationActivity"
+            android:name=".activity.personal.OrderDonationActivity"
             android:theme="@style/Theme.Translucent"/>
         <activity
-            android:name=".activity.QueryDetailActivity"
+            android:name=".activity.personal.QueryDetailActivity"
             android:theme="@style/Theme.Translucent"/>
 
         <service android:name=".service.HeartBeatService"/>

@@ -1,4 +1,4 @@
-package com.cndatacom.flowdocument.fragment;
+package com.cndatacom.flowdocument.fragment.personal;
 
 import android.content.Context;
 import android.net.Uri;
@@ -10,26 +10,25 @@ import android.view.ViewGroup;
 
 import com.cndatacom.flowdocument.R;
 
-public class RegisterFragment extends Fragment {
+public class PersonalMessageFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
     private String mParam1;
     private String mParam2;
 
-
     private OnFragmentInteractionListener mListener;
 
-    public RegisterFragment() {
+    public PersonalMessageFragment() {
     }
 
-    public static RegisterFragment newInstance() {
-        RegisterFragment fragment = new RegisterFragment();
+    public static PersonalMessageFragment newInstance() {
+        PersonalMessageFragment fragment = new PersonalMessageFragment();
         return fragment;
     }
 
-    public static RegisterFragment newInstance(String param1, String param2) {
-        RegisterFragment fragment = new RegisterFragment();
+    public static PersonalMessageFragment newInstance(String param1, String param2) {
+        PersonalMessageFragment fragment = new PersonalMessageFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -49,7 +48,7 @@ public class RegisterFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_register, null);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_personal_personal_message, null);
         initView(view);
         return view;
     }
@@ -69,10 +68,6 @@ public class RegisterFragment extends Fragment {
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         }
-//        else {
-//            throw new RuntimeException(context.toString()
-//                    + " must implement OnFragmentInteractionListener");
-//        }
     }
 
     @Override

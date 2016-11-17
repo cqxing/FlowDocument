@@ -4,11 +4,11 @@
     android:id="@+id/activity_main_personal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cndatacom.flowdocument.activity.MainPersonalActivity">
+    tools:context="com.cndatacom.flowdocument.activity.personal.MainPersonalActivity">
     <!--个人主页-->
     <include
         android:id="@+id/Layout_main"
-        layout="@layout/layou_main"></include>
+        layout="@layout/layou_personal_main"></include>
 
     <FrameLayout
         android:id="@+id/Layout_bottom_register_login"

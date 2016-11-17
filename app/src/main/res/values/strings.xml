@@ -73,5 +73,36 @@
     <string name="use_date">使用有效期:</string>
     <string name="time_and_money">100分钟（10元）</string>
 
+    <!--企业部分enterprise-->
+    <string name="enterprise_product_order">产品订购</string>
+    <string name="enterprise_access_app">APP接入</string>
+    <string name="enterprise_query_detail">明细查询</string>
+    <string name="enterprise_center">企业中心</string>
+
+    <string name="enterprise_name">企业名称:</string>
+    <string name="enterprise_contract_person">联系人:</string>
+    <string name="enterprise_telephone">联系电话:</string>
+
+    <string name="enterprise_dialog_submit_success">提交成功</string>
+    <string name="enterprise_dialog_message">请注意注册邮箱通知邮件，2个工作日内反馈注册结果</string>
+
+    <string name="enterprise_app_access_title">APP接入</string>
+    <string name="enterprise_app_access_have_no">您暂时未有APP接入</string>
+    <string name="enterprise_app_access_tips">点击“新增接入”可新增接入APP</string>
+    <string name="enterprise_app_access_rules">接入业务规则</string>
+
+    <string name="enterprise_app_access_name">名称:</string>
+    <string name="enterprise_app_access_key">KEY:</string>
+    <string name="enterprise_app_access_state">状态:</string>
+    <string name="enterprise_app_access_name_m">院线通</string>
+    <string name="enterprise_app_access_key_m">uejD3gjDj2heD</string>
+    <string name="enterprise_app_access_state_m">已启用</string>
+    <string name="enterprise_app_access_app_name">请输入接入APP名称</string>
+
+    <string name="enterprise_center_title">企业中心</string>
+    <string name="enterprise_center_welcome">欢迎您,</string>
+    <string name="enterprise_center_name">xx有限公司</string>
+    <string name="enterprise_center_time">企业账户剩余时间:</string>
+
 
 </resources>

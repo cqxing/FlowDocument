@@ -1,4 +1,4 @@
-package com.cndatacom.flowdocument.fragment;
+package com.cndatacom.flowdocument.fragment.personal;
 
 import android.content.Context;
 import android.net.Uri;
@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.cndatacom.flowdocument.R;
 
-public class DonationTimeFragment extends Fragment {
+public class RegisterFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -20,16 +20,16 @@ public class DonationTimeFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public DonationTimeFragment() {
+    public RegisterFragment() {
     }
 
-    public static DonationTimeFragment newInstance() {
-        DonationTimeFragment fragment = new DonationTimeFragment();
+    public static RegisterFragment newInstance() {
+        RegisterFragment fragment = new RegisterFragment();
         return fragment;
     }
 
-    public static DonationTimeFragment newInstance(String param1, String param2) {
-        DonationTimeFragment fragment = new DonationTimeFragment();
+    public static RegisterFragment newInstance(String param1, String param2) {
+        RegisterFragment fragment = new RegisterFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -49,7 +49,7 @@ public class DonationTimeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_donation_time, null);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_personal_register, null);
         initView(view);
         return view;
     }

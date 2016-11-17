@@ -1,4 +1,4 @@
-package com.cndatacom.flowdocument.fragment;
+package com.cndatacom.flowdocument.fragment.personal;
 
 import android.content.Context;
 import android.net.Uri;
@@ -10,25 +10,26 @@ import android.view.ViewGroup;
 
 import com.cndatacom.flowdocument.R;
 
-public class PersonalCenterFragment extends Fragment {
+public class OrderProductFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
     private String mParam1;
     private String mParam2;
 
+
     private OnFragmentInteractionListener mListener;
 
-    public PersonalCenterFragment() {
+    public OrderProductFragment() {
     }
 
-    public static PersonalCenterFragment newInstance() {
-        PersonalCenterFragment fragment = new PersonalCenterFragment();
+    public static OrderProductFragment newInstance() {
+        OrderProductFragment fragment = new OrderProductFragment();
         return fragment;
     }
 
-    public static PersonalCenterFragment newInstance(String param1, String param2) {
-        PersonalCenterFragment fragment = new PersonalCenterFragment();
+    public static OrderProductFragment newInstance(String param1, String param2) {
+        OrderProductFragment fragment = new OrderProductFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -48,12 +49,18 @@ public class PersonalCenterFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_personal_center, null);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_personal_product_order, null);
         initView(view);
         return view;
     }
 
     private void initView(View view) {
+    }
+
+    public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            mListener.onFragmentInteraction(uri);
+        }
     }
 
     @Override
@@ -62,6 +69,10 @@ public class PersonalCenterFragment extends Fragment {
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         }
+//        else {
+//            throw new RuntimeException(context.toString()
+//                    + " must implement OnFragmentInteractionListener");
+//        }
     }
 
     @Override

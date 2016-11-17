@@ -1,4 +1,4 @@
-package com.cndatacom.flowdocument.fragment;
+package com.cndatacom.flowdocument.fragment.personal;
 
 import android.content.Context;
 import android.net.Uri;
@@ -10,26 +10,25 @@ import android.view.ViewGroup;
 
 import com.cndatacom.flowdocument.R;
 
-public class OrderProductFragment extends Fragment {
+public class LoginFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
     private String mParam1;
     private String mParam2;
 
-
     private OnFragmentInteractionListener mListener;
 
-    public OrderProductFragment() {
+    public LoginFragment() {
     }
 
-    public static OrderProductFragment newInstance() {
-        OrderProductFragment fragment = new OrderProductFragment();
+    public static LoginFragment newInstance() {
+        LoginFragment fragment = new LoginFragment();
         return fragment;
     }
 
-    public static OrderProductFragment newInstance(String param1, String param2) {
-        OrderProductFragment fragment = new OrderProductFragment();
+    public static LoginFragment newInstance(String param1, String param2) {
+        LoginFragment fragment = new LoginFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -49,7 +48,7 @@ public class OrderProductFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_product_order, null);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_personal_login, null);
         initView(view);
         return view;
     }

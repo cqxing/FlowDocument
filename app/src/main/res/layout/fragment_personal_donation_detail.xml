@@ -4,6 +4,6 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
     <!--转赠详情界面-->
-    <include layout="@layout/list_item_donation_detail"></include>
+    <include layout="@layout/list_item_personal_donation_detail"></include>
 
 </LinearLayout>

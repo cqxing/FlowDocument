@@ -1,4 +1,4 @@
-package com.cndatacom.flowdocument.fragment;
+package com.cndatacom.flowdocument.fragment.personal;
 
 import android.content.Context;
 import android.net.Uri;
@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.cndatacom.flowdocument.R;
 
-public class UseDetailFragment extends Fragment {
+public class DonationDetailFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -19,16 +19,16 @@ public class UseDetailFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public UseDetailFragment() {
+    public DonationDetailFragment() {
     }
 
-    public static UseDetailFragment newInstance() {
-        UseDetailFragment fragment = new UseDetailFragment();
+    public static DonationDetailFragment newInstance() {
+        DonationDetailFragment fragment = new DonationDetailFragment();
         return fragment;
     }
 
-    public static UseDetailFragment newInstance(String param1, String param2) {
-        UseDetailFragment fragment = new UseDetailFragment();
+    public static DonationDetailFragment newInstance(String param1, String param2) {
+        DonationDetailFragment fragment = new DonationDetailFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -48,7 +48,7 @@ public class UseDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_user_detail, null);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_personal_donation_detail, null);
         initView(view);
         return view;
     }

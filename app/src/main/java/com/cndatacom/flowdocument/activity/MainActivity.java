@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.cndatacom.flowdocument.R;
+import com.cndatacom.flowdocument.activity.personal.MainPersonalActivity;
 import com.cndatacom.flowdocument.service.HeartBeatService;
 import com.cndatacom.flowdocument.utils.Network;
 import com.cndatacom.flowdocument.utils.Network.NetWorkType;

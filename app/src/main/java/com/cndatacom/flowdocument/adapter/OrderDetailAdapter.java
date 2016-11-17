@@ -16,7 +16,7 @@ public class OrderDetailAdapter extends BaseQuickAdapter<AppKey> {
 
 
     public OrderDetailAdapter() {
-        super(R.layout.list_item_order_detail, getlist());
+        super(R.layout.list_item_personal_order_detail, getlist());
     }
 
     private static List<AppKey> getlist() {
